@@ -9,7 +9,7 @@ window.HP_CONFIG = {
 
   // Paste the Apps Script web app URL here after deployment (see README).
   // While empty, the site runs in demo mode: nothing is sent anywhere.
-  ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbxOtST8QgCj_4p6eTBLEK0CGdN5MfMqejONoNJKk0TpyADyVGk-mkb_kPcvuEo2Qfs1/exec",
+  ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbwTlepuNlvrLgcUCVCAUJKrBfRq7F4vVtsqKwR8FkOHUCsO09IJqjBhJYzBcaIXWhgK/exec",
 
   MIN_SKILLS: 1, // TODO: confirm the skills rule (at least one, or all required)
   REQUEST_TIMEOUT_MS: 20000,
