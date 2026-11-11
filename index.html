@@ -1,59 +1,222 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  
-<!-- Website Share Preview -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hult Prize">
-<meta property="og:title" content="Hult Prize Community Registration Website">
-<meta property="og:description" content="Register to join the Hult Prize community at Borg El Arab Technological University.">
-<meta property="og:url" content="https://ahmedelsobhy812-jpg.github.io/hult-praiz1/">
-<meta property="og:image" content="https://ahmedelsobhy812-jpg.github.io/hult-praiz1/assets/images/share-preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انتهاء التسجيلات</title>
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hult Prize Community Registration Website">
-<meta name="twitter:description" content="Join the Hult Prize community at BATU.">
-<meta name="twitter:image" content="https://ahmedelsobhy812-jpg.github.io/hult-praiz1/assets/images/share-preview.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Hult Prize – Borg El Arab Technological University</title>
-  <link rel="icon" type="image/png" href="assets/images/logo-original.png">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/forms.css">
-  <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f5ff, #fceef6, #eef2ff);
+            overflow: hidden;
+        }
+
+        /* Background decoration */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0.5;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .circle.one {
+            width: 300px;
+            height: 300px;
+            background: #e5d5ff;
+            top: -100px;
+            right: -80px;
+        }
+
+        .circle.two {
+            width: 250px;
+            height: 250px;
+            background: #ffcce5;
+            bottom: -80px;
+            left: -70px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        /* Main Card */
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.9);
+            border-radius: 30px;
+            padding: 55px 35px;
+            text-align: center;
+            box-shadow: 0 20px 70px rgba(80, 40, 120, 0.10);
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Icon */
+        .icon {
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #7139a5, #bd54a7);
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(130, 65, 170, 0.25);
+            transform: rotate(-5deg);
+        }
+
+        .icon svg {
+            width: 52px;
+            height: 52px;
+            stroke: white;
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3eaff;
+            color: #7945a5;
+            padding: 7px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(27px, 5vw, 39px);
+            font-weight: 900;
+            color: #30213f;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #9952b7;
+        }
+
+        .description {
+            color: #777080;
+            font-size: 16px;
+            line-height: 2;
+            font-weight: 500;
+            max-width: 470px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 55px;
+            height: 4px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #7139a5, #e77db8);
+            margin: 30px auto;
+        }
+
+        .thank-you {
+            font-size: 15px;
+            color: #554462;
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 35px;
+            color: #aaa1b1;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 45px 22px;
+                border-radius: 25px;
+            }
+
+            .icon {
+                width: 90px;
+                height: 90px;
+                border-radius: 27px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
-  <main class="app" id="app"></main>
-  
-<footer class="developer-credit">
-  <a
-    href="https://www.facebook.com/share/181z4wVUy8/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Visit Ahmed Elsobhy on Facebook"
-  >
-    PY. AHMED ELSOBHY
-  </a>
-</footer>
 
-  <noscript><p style="padding:24px;position:relative">Please turn on JavaScript to register.</p></noscript>
+    <div class="circle one"></div>
+    <div class="circle two"></div>
 
-  <script src="js/config.js"></script>
-  <script src="js/locations.js"></script>
-  <script src="js/committees.js"></script>
-  <script src="js/form-validation.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/submission.js"></script>
-  <script src="js/app.js"></script>
+    <main class="container">
+
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M5 12.5l4.5 4.5L19 7"/>
+            </svg>
+        </div>
+
+        <div class="tag">REGISTRATION CLOSED</div>
+
+        <h1>
+            تم انتهاء <span>التسجيلات</span>
+        </h1>
+
+        <p class="description">
+            باب التسجيلات اتقفل، وبنشكر كل شخص اهتم وشارك
+            وقدم في الفرصة دي.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="thank-you">
+            شكراً لتعاونكم وثقتكم ❤️
+            <br>
+            في انتظاركم في الفرصة الجاية!
+        </p>
+
+        <div class="footer">
+            SEE YOU IN THE NEXT OPPORTUNITY
+        </div>
+
+    </main>
+
 </body>
 </html>
