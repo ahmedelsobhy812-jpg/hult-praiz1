@@ -3,8 +3,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#f8f5ff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>انتهاء التسجيلات</title>
 
@@ -17,52 +16,40 @@
             box-sizing: border-box;
         }
 
-        html {
+        html, body {
             width: 100%;
             min-height: 100%;
-            -webkit-text-size-adjust: 100%;
         }
 
         body {
             font-family: 'Cairo', sans-serif;
-            width: 100%;
             min-height: 100vh;
             min-height: 100dvh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: linear-gradient(
-                135deg,
-                #f8f5ff,
-                #fceef6,
-                #eef2ff
-            );
+            background: linear-gradient(135deg, #f8f5ff, #fceef6, #eef2ff);
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Background Decoration */
+        /* Background */
         .circle {
             position: fixed;
             border-radius: 50%;
-            filter: blur(2px);
-            opacity: 0.5;
             pointer-events: none;
+            opacity: 0.5;
+            z-index: 0;
             animation: float 7s ease-in-out infinite;
         }
 
         .circle.one {
-            width: clamp(150px, 40vw, 300px);
-            height: clamp(150px, 40vw, 300px);
+            width: 280px;
+            height: 280px;
             background: #e5d5ff;
             top: -100px;
             right: -80px;
         }
 
         .circle.two {
-            width: clamp(130px, 35vw, 250px);
-            height: clamp(130px, 35vw, 250px);
+            width: 240px;
+            height: 240px;
             background: #ffcce5;
             bottom: -80px;
             left: -70px;
@@ -70,32 +57,44 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
 
-            50% {
-                transform: translateY(-25px);
-            }
+        /* Full Screen Center */
+        .page-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            direction: ltr;
+            z-index: 1;
         }
 
         /* Main Card */
         .container {
-            position: relative;
-            z-index: 2;
+            direction: rtl;
+            text-align: center;
+
             width: 100%;
-            max-width: 520px;
+            max-width: 500px;
+
             background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
+
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: clamp(22px, 6vw, 30px);
-            padding: clamp(30px, 7vw, 55px)
-                     clamp(18px, 5vw, 35px);
-            text-align: center;
+            border-radius: 28px;
+
+            padding: 45px 25px;
+
             box-shadow: 0 20px 70px rgba(80, 40, 120, 0.10);
+
             animation: appear 0.8s ease;
-            margin: auto;
         }
 
         @keyframes appear {
@@ -103,7 +102,6 @@
                 opacity: 0;
                 transform: translateY(25px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -112,21 +110,24 @@
 
         /* Icon */
         .icon {
-            width: clamp(75px, 20vw, 105px);
-            height: clamp(75px, 20vw, 105px);
+            width: 90px;
+            height: 90px;
             margin: 0 auto 25px;
+
             background: linear-gradient(135deg, #7139a5, #bd54a7);
-            border-radius: clamp(22px, 6vw, 32px);
+            border-radius: 27px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             box-shadow: 0 12px 30px rgba(130, 65, 170, 0.25);
             transform: rotate(-5deg);
         }
 
         .icon svg {
-            width: 48%;
-            height: 48%;
+            width: 48px;
+            height: 48px;
             stroke: white;
             stroke-width: 2.5;
             fill: none;
@@ -139,15 +140,15 @@
             display: inline-block;
             background: #f3eaff;
             color: #7945a5;
-            padding: 6px 18px;
+            padding: 7px 18px;
             border-radius: 50px;
-            font-size: clamp(10px, 3vw, 13px);
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         h1 {
-            font-size: clamp(25px, 7vw, 39px);
+            font-size: clamp(25px, 7vw, 37px);
             font-weight: 900;
             color: #30213f;
             line-height: 1.7;
@@ -160,7 +161,7 @@
 
         .description {
             color: #777080;
-            font-size: clamp(13px, 3.8vw, 16px);
+            font-size: 15px;
             line-height: 2;
             font-weight: 500;
             max-width: 420px;
@@ -176,7 +177,7 @@
         }
 
         .thank-you {
-            font-size: clamp(13px, 3.8vw, 15px);
+            font-size: 14px;
             color: #554462;
             font-weight: 700;
             line-height: 2;
@@ -185,20 +186,53 @@
         .footer {
             margin-top: 25px;
             color: #aaa1b1;
-            font-size: clamp(9px, 2.7vw, 12px);
+            font-size: 10px;
             font-weight: 600;
             direction: ltr;
             letter-spacing: 1px;
         }
 
-        /* Extra Small Phones */
-        @media (max-width: 360px) {
-            body {
-                padding: 14px;
+        /* Mobile */
+        @media (max-width: 480px) {
+            .page-wrapper {
+                padding: 18px;
             }
 
             .container {
-                padding: 28px 16px;
+                max-width: 100%;
+                padding: 35px 20px;
+                border-radius: 24px;
+            }
+
+            .icon {
+                width: 78px;
+                height: 78px;
+                border-radius: 23px;
+                margin-bottom: 22px;
+            }
+
+            .icon svg {
+                width: 42px;
+                height: 42px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .thank-you {
+                font-size: 13px;
+            }
+        }
+
+        /* Very Small Screens */
+        @media (max-width: 350px) {
+            .page-wrapper {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 28px 14px;
             }
 
             h1 {
@@ -206,39 +240,6 @@
             }
         }
 
-        /* Short Screens */
-        @media (max-height: 600px) {
-            body {
-                align-items: flex-start;
-            }
-
-            .container {
-                margin: auto;
-                padding-top: 22px;
-                padding-bottom: 22px;
-            }
-
-            .icon {
-                margin-bottom: 15px;
-            }
-
-            .divider {
-                margin: 16px auto;
-            }
-
-            .footer {
-                margin-top: 15px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-            }
-        }
     </style>
 </head>
 
@@ -247,38 +248,42 @@
     <div class="circle one"></div>
     <div class="circle two"></div>
 
-    <main class="container">
+    <main class="page-wrapper">
 
-        <div class="icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M5 12.5l4.5 4.5L19 7"/>
-            </svg>
-        </div>
+        <section class="container">
 
-        <div class="tag">
-            REGISTRATION CLOSED
-        </div>
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 12.5l4.5 4.5L19 7"/>
+                </svg>
+            </div>
 
-        <h1>
-            تم انتهاء <span>التسجيلات</span>
-        </h1>
+            <div class="tag">
+                REGISTRATION CLOSED
+            </div>
 
-        <p class="description">
-            باب التسجيلات اتقفل، وبنشكر كل شخص اهتم وشارك
-            وقدم في الفرصة دي.
-        </p>
+            <h1>
+                تم انتهاء <span>التسجيلات</span>
+            </h1>
 
-        <div class="divider"></div>
+            <p class="description">
+                باب التسجيلات اتقفل، وبنشكر كل شخص اهتم وشارك
+                وقدم في الفرصة دي.
+            </p>
 
-        <p class="thank-you">
-            شكراً لتعاونكم وثقتكم ❤️
-            <br>
-            في انتظاركم في الفرصة الجاية!
-        </p>
+            <div class="divider"></div>
 
-        <div class="footer">
-            SEE YOU IN THE NEXT OPPORTUNITY
-        </div>
+            <p class="thank-you">
+                شكراً لتعاونكم وثقتكم ❤️
+                <br>
+                في انتظاركم في الفرصة الجاية!
+            </p>
+
+            <div class="footer">
+                SEE YOU IN THE NEXT OPPORTUNITY
+            </div>
+
+        </section>
 
     </main>
 
